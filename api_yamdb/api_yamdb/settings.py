@@ -1,5 +1,6 @@
 import os
 from datetime import timedelta
+from .secret_settings import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
