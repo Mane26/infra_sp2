@@ -1,9 +1,14 @@
 import os
-from datetime import timedelta
-from .secret_settings import *
+from datetime import timedelta 
+
+from .settings_secret import *
+
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your_secret_key')
 
 DEBUG = False
 
