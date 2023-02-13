@@ -3,6 +3,7 @@ version: '3'
 services:
   db:
     image: postgres:13.0-alpine
+    container_name: database-server
     volumes:
       - /var/lib/postgresql/data/
     env_file:
@@ -13,6 +14,7 @@ services:
       context: ../
       dockerfile: api_yamdb/Dockerfile
     restart: always
+    container_name: web-server
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
@@ -23,6 +25,7 @@ services:
 
   nginx:
     image: nginx:1.21.3-alpine
+    container_name: nginx-server
     ports:
       - "80:80"
     volumes:
